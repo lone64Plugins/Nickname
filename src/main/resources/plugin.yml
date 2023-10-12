@@ -1,0 +1,17 @@
+name: Nickname
+main: io.starweight.nickname.Nickname
+author: lone64
+version: 1.0.0
+api-version: '1.13'
+description: 닉네임 플러그인
+permissions:
+  nickname.admin:
+    default: op
+    description: 관리자 권한
+commands:
+  닉네임변경:
+    permission: nickname.admin
+    description: 닉네임 변경 명령어
+  닉네임초기화:
+    permission: nickname.admin
+    description: 닉네임 초기화 명령어

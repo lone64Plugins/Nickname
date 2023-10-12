@@ -1,0 +1,32 @@
+plugins {
+    id "java"
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
+shadowJar {
+    archiveBaseName.set("Nickname")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+}
+
+jar {
+    finalizedBy shadowJar
+}
+
+group = "io.starweight.nickname"
+
+repositories {
+    maven { url = "https://repo.lone64.org/repository/maven-public/" }
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:R0.1:1.17"
+
+    implementation "io.starweight:slib:rel:1.0.0a-r3"
+    implementation "io.starweight:nametags-api:rel:1.0.0a-r1"
+}
